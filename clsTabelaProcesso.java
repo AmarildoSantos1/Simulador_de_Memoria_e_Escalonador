@@ -6,16 +6,10 @@ import javax.swing.event.*;
 import java.awt.event.*;
 public class clsTabelaProcesso 
 {
-	//--------------------------------------------------------------------------------------------------------------------------//
-  																//ATRIBUTOS//
-	//--------------------------------------------------------------------------------------------------------------------------//    
     clsProcesso vetProcessos[];
     JTable tblTabela;
     int linhas;
-	//--------------------------------------------------------------------------------------------------------------------------//
-  																//CONSTRUTOR//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    public clsTabelaProcesso(int pLinhas, int pLargura, int pAltura) 
+	public clsTabelaProcesso(int pLinhas, int pLargura, int pAltura) 
     {
     	linhas = pLinhas;
     	vetProcessos = new clsProcesso[linhas];
@@ -26,23 +20,11 @@ public class clsTabelaProcesso
 		atribuirListeners();
 		tblTabela.setPreferredScrollableViewportSize(new Dimension(pLargura, pAltura));
     } 
-	//--------------------------------------------------------------------------------------------------------------------------//
-  															  //FUNÇÕES PÚBLICAS//
-	//--------------------------------------------------------------------------------------------------------------------------// 
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												  //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS//
-	//--------------------------------------------------------------------------------------------------------------------------// 
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											 //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> TABLE//
-	//--------------------------------------------------------------------------------------------------------------------------// 
 	public JTable getTable()
 	{
 		return tblTabela;
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											  //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> COR//
-	//--------------------------------------------------------------------------------------------------------------------------//  
-    public void setCor(int pLinha, Color cor)
+	public void setCor(int pLinha, Color cor)
     {
     	vetProcessos[pLinha].setCor(cor);
     }
@@ -50,10 +32,7 @@ public class clsTabelaProcesso
     {
     	return vetProcessos[pLinha].getCor();
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											  //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> PID//
-	//--------------------------------------------------------------------------------------------------------------------------//  
-    public void setPid(int pLinha, int pid)
+	public void setPid(int pLinha, int pid)
     {
     	vetProcessos[pLinha].setPid(pid);
     }
@@ -65,10 +44,7 @@ public class clsTabelaProcesso
     {
     	return vetProcessos[pLinha].getIntPid();
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											 //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> ESTADO//
-	//--------------------------------------------------------------------------------------------------------------------------//  
-    public void setEstado(int pLinha, String pEstado)
+	public void setEstado(int pLinha, String pEstado)
     {
     	vetProcessos[pLinha].setEstado(pEstado);
     }
@@ -76,10 +52,7 @@ public class clsTabelaProcesso
     {
     	return vetProcessos[pLinha].getEstado();
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											 //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> TIPO//
-	//--------------------------------------------------------------------------------------------------------------------------//  
-    public void setTipo(int pLinha, String pTipo)
+	public void setTipo(int pLinha, String pTipo)
     {
     	vetProcessos[pLinha].setTipo(pTipo);
     }
@@ -87,10 +60,7 @@ public class clsTabelaProcesso
     {
     	return vetProcessos[pLinha].getTipo();
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  										    //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> FRAMES//
-	//--------------------------------------------------------------------------------------------------------------------------//  
-    public void setFrames(int pLinha, int pFrames)
+	public void setFrames(int pLinha, int pFrames)
     {
     	vetProcessos[pLinha].setFrames(pFrames);
     }
@@ -102,10 +72,7 @@ public class clsTabelaProcesso
     {
     	return vetProcessos[pLinha].getIntFrames();
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  										    //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> TEMPO//
-	//--------------------------------------------------------------------------------------------------------------------------//  
-    public void setTempo(int pLinha, int pTempo)
+	public void setTempo(int pLinha, int pTempo)
     {
     	vetProcessos[pLinha].setTempo(pTempo);
     }
@@ -117,10 +84,7 @@ public class clsTabelaProcesso
     {
     	return vetProcessos[pLinha].getIntTempo();
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  										 //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> TEMPO DE UCP//
-	//--------------------------------------------------------------------------------------------------------------------------//  
-    public void setTempoUcp(int pLinha, int pTempoUcp)
+	public void setTempoUcp(int pLinha, int pTempoUcp)
     {
     	vetProcessos[pLinha].setTempoUcp(pTempoUcp);
     }
@@ -132,10 +96,7 @@ public class clsTabelaProcesso
     {
     	return vetProcessos[pLinha].getIntTempoUcp();
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  									  //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> TEMPO DE CRIAÇÃO//
-	//--------------------------------------------------------------------------------------------------------------------------//  
-    public void setTempoDeCriacao(int pLinha, int pTempoDeCriacao)
+	public void setTempoDeCriacao(int pLinha, int pTempoDeCriacao)
     {
     	vetProcessos[pLinha].setTempoCriacao(pTempoDeCriacao);
     }
@@ -147,12 +108,6 @@ public class clsTabelaProcesso
     {
     	return vetProcessos[pLinha].getIntTempoCriacao();
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											              //FUNÇÕES PÚBLICAS -> WORK//
-	//--------------------------------------------------------------------------------------------------------------------------//
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											  //FUNÇÕES PÚBLICAS -> WORK -> ADICIONAR PROCESSO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void adicionarProcesso(Color pCor, int pFrames, clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria, clsTabelaProcessosBloqueados pProcessosBloqueados, int pTempo, String pTipo)
 	{
 		int linha;
@@ -172,7 +127,7 @@ public class clsTabelaProcesso
 		{
 			if (!pMemoriaSecundaria.adicionarProcesso(processoAuxiliar, tamanhoMaiorProcesso))
 			{
-				JOptionPane.showMessageDialog(null, "É necessário que haja espaço livre na memória secundária para realizar o swap de memória e por este motivo você não pode adicionar o processo.");
+				JOptionPane.showMessageDialog(null, "ï¿½ necessï¿½rio que haja espaï¿½o livre na memï¿½ria secundï¿½ria para realizar o swap de memï¿½ria e por este motivo vocï¿½ nï¿½o pode adicionar o processo.");
 			}
 			else
 			{
@@ -197,16 +152,13 @@ public class clsTabelaProcesso
 			pProcessosBloqueados.adicionarProcesso(vetProcessos[linha], pMemoriaPrincipal, pMemoriaSecundaria);
 		}
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											  //FUNÇÕES PÚBLICAS -> WORK -> ELIMINAR PROCESSO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void eliminarProcesso(clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria, clsTabelaProcessosBloqueados pProcessosBloqueados, clsTabelaProcessoEmExecucao pProcessoEmExecucao)
 	{
 		int op = 1;
 		int x;
 		if(vetProcessos[tblTabela.getSelectedRow()].getIntPid() != -1)
 		{
-			op = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover o processo selecionado? \nVocê não poderá desfazer esta operação.");
+			op = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover o processo selecionado? \nVocï¿½ nï¿½o poderï¿½ desfazer esta operaï¿½ï¿½o.");
 			if (op == 0)
 			{
 				x = tblTabela.getSelectedRow();
@@ -234,16 +186,10 @@ public class clsTabelaProcesso
 		}
 		atualizarTabela();
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											    //FUNÇÕES PÚBLICAS -> WORK -> ATUALIZAR TABELA//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void atualizarTabela()
 	{
 		tblTabela.updateUI();
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  									      //FUNÇÕES PÚBLICAS -> WORK -> INCREMENTAR TEMPO DE CRIAÇÃO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void incrementarTempoDeCriacao()
 	{
 		int y = 0;
@@ -257,9 +203,6 @@ public class clsTabelaProcesso
 		}while(y < linhas && vetProcessos[y-1].getIntPid() != -1);
 		atualizarTabela();
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  									      //FUNÇÕES PÚBLICAS -> WORK -> INCREMENTAR TEMPO DE CPU//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void incrementarTempoDeCpu(clsProcesso pProcesso)
 	{
 		int y = 0;
@@ -273,9 +216,6 @@ public class clsTabelaProcesso
 		}while(y < linhas && vetProcessos[y-1].getIntPid() != -1 && vetProcessos[y-1].getIntPid() != pProcesso.getIntPid());
 		atualizarTabela();
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  									      //FUNÇÕES PÚBLICAS -> WORK -> INCREMENTAR TEMPO DE CRIAÇÃO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void atualizarEstados(clsProcesso pProcesso)
 	{
 		int y = 0;
@@ -295,10 +235,7 @@ public class clsTabelaProcesso
 			y++;
 		}while(y<linhas && vetProcessos[y-1].getIntPid() != -1);
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  									   //FUNÇÕES PÚBLICAS -> WORK -> VERIFICAR TAMANHO DO MAIOR PROCESSO//
-	//--------------------------------------------------------------------------------------------------------------------------//
-   	public int verificarTamanhoDoMaiorProcesso()
+	public int verificarTamanhoDoMaiorProcesso()
    	{
     	int tamanhoMaiorProcesso = 0;
     	int y = 0;
@@ -312,23 +249,14 @@ public class clsTabelaProcesso
     	}while(vetProcessos[y-1].getIntPid() != -1);
     	return tamanhoMaiorProcesso;	
    	}	
-	//--------------------------------------------------------------------------------------------------------------------------//
-  															 //FUNÇÕES PRIVADAS//
-	//--------------------------------------------------------------------------------------------------------------------------//
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												   //FUNÇÕES PRIVADAS -> INICIALIZAR VETOR//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private void inicializarVetor(int linhas)
+	private void inicializarVetor(int linhas)
     {
 		for(int y=0; y<linhas; y++)
 		{
 			vetProcessos[y] = new clsProcesso();
 		}
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												  //FUNÇÕES PRIVADAS -> ATRIBUIR RENDERER//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private void atribuirRenderer()
+	private void atribuirRenderer()
     {
 		tblTabela.setDefaultRenderer(Object.class, 
 										new DefaultTableCellRenderer()
@@ -351,15 +279,12 @@ public class clsTabelaProcesso
 										}	
 									 );
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												 //FUNÇÕES PRIVADAS -> ATRIBUIR MODELO//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private void atribuirModelo()
+	private void atribuirModelo()
     {
     	tblTabela.setModel(
     						new AbstractTableModel()
 							{
-								private String colunas[] = {"PID", "Tipo", "Estado", "Frames", "Tempo","Tempo de UCP", "Tempo de criação"};
+								private String colunas[] = {"PID", "Tipo", "Estado", "Frames", "Tempo","Tempo de UCP", "Tempo de criaï¿½ï¿½o"};
 								public String getColumnName(int num)
 							    {
 							        return colunas[num];
@@ -396,10 +321,7 @@ public class clsTabelaProcesso
 							}
     					 );		
     }  
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												 //FUNÇÕES PRIVADAS -> ATRIBUIR LISTENERS//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private void atribuirListeners()
+	private void atribuirListeners()
     {
 		tblTabela.addMouseListener(
 										new MouseAdapter()
@@ -423,10 +345,7 @@ public class clsTabelaProcesso
 										}
 									 );
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												//FUNÇÕES PRIVADAS -> OBTER POSIÇÃO VAZIA//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private int getPosicaoVazia()
+	private int getPosicaoVazia()
    	{
    		int x = 0; 
    		int pos = 0;
@@ -440,10 +359,7 @@ public class clsTabelaProcesso
    		}while(x < linhas && vetProcessos[x-1].getIntPid() != -1);
 		return pos;
    	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												      //FUNÇÕES PRIVADAS -> OBTER ID//
-	//--------------------------------------------------------------------------------------------------------------------------//
-   	private int ObterId()
+	private int ObterId()
    	{
    		int maior = 0;
    		int x = 0;

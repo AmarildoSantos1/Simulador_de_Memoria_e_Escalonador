@@ -7,10 +7,7 @@ import java.text.*;
 import javax.swing.JOptionPane;
 public class frmAdicionarProcesso extends JFrame
 {
-	//--------------------------------------------------------------------------------------------------------------------------//
-  																//ATRIBUTOS//
-	//--------------------------------------------------------------------------------------------------------------------------// 
-    JTable tblCor;
+	JTable tblCor;
     JSpinner spnFrames;
     JSpinner spnTempo;
     JComboBox cbbTipo;
@@ -19,47 +16,35 @@ public class frmAdicionarProcesso extends JFrame
 	clsTabelaMemoria objMemoriaPrincipal;
 	clsTabelaMemoria objMemoriaSecundaria;
 	clsTabelaCor objTblCor;
-	//--------------------------------------------------------------------------------------------------------------------------//
-  																//CONSTRUTOR//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    public frmAdicionarProcesso(clsTabelaProcesso pProcesso, clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria, clsTabelaProcessosBloqueados pProcessosBloqueados) 
+	public frmAdicionarProcesso(clsTabelaProcesso pProcesso, clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria, clsTabelaProcessosBloqueados pProcessosBloqueados) 
     {
-		//--------------------------------------------------------------------------------------------------------------------------//
-																	//TELA//
-		//--------------------------------------------------------------------------------------------------------------------------//
-    	super("Adicionar processo");
+		super("Adicionar processo");
     	Container tela = getContentPane();
     	tela.setLayout(new BorderLayout());
     	objProcesso = pProcesso;
     	objProcessosBloqueados = pProcessosBloqueados;
     	objMemoriaPrincipal= pMemoriaPrincipal; 
     	objMemoriaSecundaria= pMemoriaSecundaria;
-    	//--------------------------------------------------------------------------------------------------------------------------//
-							   									//CENTRO DA TELA//
-		//--------------------------------------------------------------------------------------------------------------------------//
+    	
+		//CENTRO DA TELA//
+		
     	JPanel pnlCentro = new JPanel();
     	pnlCentro.setLayout(new GridLayout(1,2));
     	pnlCentro.setBorder(BorderFactory.createEtchedBorder(1));
     	tela.add(pnlCentro, BorderLayout.CENTER);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   							    //CENTRO DA TELA -> FRAMES//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> FRAMES//
 		JPanel pnlFrames = new JPanel();
 		pnlFrames.setLayout(new BorderLayout());
 		pnlFrames.setBorder(BorderFactory.createEtchedBorder(1));
 		pnlCentro.add(pnlFrames);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   						  //CENTRO DA TELA -> FRAMES -> TÍTULO//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> FRAMES -> TITULO//
 		JPanel pnlTituloFrames = new JPanel();
 		pnlTituloFrames.setLayout(new FlowLayout());
 		pnlFrames.add(pnlTituloFrames, BorderLayout.NORTH);
 		//--------------------------------------------------------------------------------------------------------------------------//
 		JLabel lblTituloFrames = new JLabel("Frames");
 		pnlTituloFrames.add(lblTituloFrames);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   						  //CENTRO DA TELA -> FRAMES -> SPINNER//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> FRAMES -> SPINNER//
 		JPanel pnlSpinnerFrames = new JPanel();
 		pnlSpinnerFrames.setLayout(new FlowLayout());
 		pnlFrames.add(pnlSpinnerFrames, BorderLayout.CENTER);
@@ -68,25 +53,19 @@ public class frmAdicionarProcesso extends JFrame
 		spnFrames.setEditor(new JSpinner.NumberEditor(spnFrames, "000"));
 		pnlSpinnerFrames.add(spnFrames);
 		spnFrames.setPreferredSize(new Dimension(100, 25));
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   							    //CENTRO DA TELA -> TEMPO//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> TEMPO//
 		JPanel pnlTempo = new JPanel();
 		pnlTempo.setLayout(new BorderLayout());
 		pnlTempo.setBorder(BorderFactory.createEtchedBorder(1));
 		pnlCentro.add(pnlTempo);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   						  //CENTRO DA TELA -> TEMPO -> TÍTULO//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> TEMPO -> Tï¿½TULO//
 		JPanel pnlTituloTempo = new JPanel();
 		pnlTituloTempo.setLayout(new FlowLayout());
 		pnlTempo.add(pnlTituloTempo, BorderLayout.NORTH);
 		//--------------------------------------------------------------------------------------------------------------------------//
 		JLabel lblTituloTempo = new JLabel("Tempo");
 		pnlTituloTempo.add(lblTituloTempo);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   						  //CENTRO DA TELA -> TEMPO -> SPINNER//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> TEMPO -> SPINNER//
 		JPanel pnlSpinnerTempo = new JPanel();
 		pnlSpinnerTempo.setLayout(new FlowLayout());
 		pnlTempo.add(pnlSpinnerTempo, BorderLayout.CENTER);
@@ -95,25 +74,19 @@ public class frmAdicionarProcesso extends JFrame
 		spnTempo.setEditor(new JSpinner.NumberEditor(spnTempo, "000"));
 		pnlSpinnerTempo.add(spnTempo);
 		spnTempo.setPreferredSize(new Dimension(100, 25));
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   							    //CENTRO DA TELA -> TIPO//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> TIPO//
 		JPanel pnlTipo = new JPanel();
 		pnlTipo.setLayout(new BorderLayout());
 		pnlTipo.setBorder(BorderFactory.createEtchedBorder(1));
 		pnlCentro.add(pnlTipo);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   						  //CENTRO DA TELA -> TIPO -> TÍTULO//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> TIPO -> Tï¿½TULO//
 		JPanel pnlTituloTipo = new JPanel();
 		pnlTituloTipo.setLayout(new FlowLayout());
 		pnlTipo.add(pnlTituloTipo, BorderLayout.NORTH);
 		//--------------------------------------------------------------------------------------------------------------------------//
 		JLabel lblTituloTipo = new JLabel("Tipo");
 		pnlTituloTipo.add(lblTituloTipo);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   						  //CENTRO DA TELA -> TIPO -> JCOMBOBOX//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> TIPO -> JCOMBOBOX//
 		JPanel pnlComboBoxTipo = new JPanel();
 		pnlComboBoxTipo.setLayout(new FlowLayout());
 		pnlTipo.add(pnlComboBoxTipo, BorderLayout.CENTER);
@@ -122,25 +95,19 @@ public class frmAdicionarProcesso extends JFrame
 		cbbTipo.addItem("I/O Bound");
 		cbbTipo.addItem("CPU Bound");
 		pnlComboBoxTipo.add(cbbTipo);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   							//CENTRO DA TELA -> COR DO PROCESSO//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> COR DO PROCESSO//
 		JPanel pnlCorDoProcesso = new JPanel();
 		pnlCorDoProcesso.setBorder(BorderFactory.createEtchedBorder(1));
 		pnlCorDoProcesso.setLayout(new BorderLayout());
 		pnlCentro.add(pnlCorDoProcesso);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   					 //CENTRO DA TELA -> COR DO PROCESSO -> TÍTULO//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> COR DO PROCESSO -> Tï¿½TULO//
 		JPanel pnlTituloCorProcesso = new JPanel();
 		pnlTituloCorProcesso.setLayout(new FlowLayout());
 		pnlCorDoProcesso.add(pnlTituloCorProcesso, BorderLayout.NORTH);
 		//--------------------------------------------------------------------------------------------------------------------------//
 		JLabel lblTituloCorDoProcesso = new JLabel("Cor do processo");
 		pnlTituloCorProcesso.add(lblTituloCorDoProcesso);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   					 //CENTRO DA TELA -> COR DO PROCESSO -> TABELA//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//CENTRO DA TELA -> COR DO PROCESSO -> TABELA//
 		JPanel pnlTabelaCorDoProcesso = new JPanel();
 		pnlTabelaCorDoProcesso.setLayout(new FlowLayout());
 		pnlCorDoProcesso.add(pnlTabelaCorDoProcesso, BorderLayout.CENTER);
@@ -148,9 +115,7 @@ public class frmAdicionarProcesso extends JFrame
 		objTblCor = new clsTabelaCor(100, 23);
 		JScrollPane scrCor = new JScrollPane(objTblCor.getTable());
 		pnlTabelaCorDoProcesso.add(scrCor);
-		//--------------------------------------------------------------------------------------------------------------------------//
-							   							       //RODAPÉ DA TELA//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//RODAPE DA TELA//
 		JPanel pnlRodape = new JPanel();
 		pnlRodape.setLayout(new FlowLayout());
 		tela.add(pnlRodape, BorderLayout.SOUTH);
@@ -179,9 +144,7 @@ public class frmAdicionarProcesso extends JFrame
 											}
 										}
 									  );
-		//--------------------------------------------------------------------------------------------------------------------------//
-																	//TELA//
-		//--------------------------------------------------------------------------------------------------------------------------//
+		//TELA//
 		setResizable(false);
 		pack();
 		setLocationRelativeTo(null);

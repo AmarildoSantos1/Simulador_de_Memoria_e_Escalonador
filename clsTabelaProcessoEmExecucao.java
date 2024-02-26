@@ -6,18 +6,12 @@ import javax.swing.event.*;
 import java.awt.event.*;
 public class clsTabelaProcessoEmExecucao 
 {
-	//--------------------------------------------------------------------------------------------------------------------------//
-  																//ATRIBUTOS//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	JTable tblTabela;
 	clsProcesso objProcesso;
 	clsTabelaProcessosBloqueados objTabelaProcessosBloqueados;
 	clsTabelaProcesso objListaProcessos;
 	int tempo;
-	//--------------------------------------------------------------------------------------------------------------------------//
-  																//CONSTRUTOR//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    public clsTabelaProcessoEmExecucao(int pLargura, int pAltura, clsTabelaProcessosBloqueados pProcessosBloqueados, clsTabelaProcesso pProcessos) 
+	public clsTabelaProcessoEmExecucao(int pLargura, int pAltura, clsTabelaProcessosBloqueados pProcessosBloqueados, clsTabelaProcesso pProcessos) 
     {
     	tempo = 0;
     	objProcesso = new clsProcesso();
@@ -28,15 +22,6 @@ public class clsTabelaProcessoEmExecucao
     	atribuirRenderer();
     	atribuirModelo();
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  															  //FUNÇÕES PÚBLICAS//
-	//--------------------------------------------------------------------------------------------------------------------------// 
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												  //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS//
-	//--------------------------------------------------------------------------------------------------------------------------// 
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											  //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> TEMPO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public String getTempo()
 	{
 		if (tempo == 0 || objProcesso.getIntPid() == -1)
@@ -45,26 +30,14 @@ public class clsTabelaProcessoEmExecucao
 		}
 		return Integer.toString(tempo);
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											  //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> TABLE//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    public JTable getTable()
+	public JTable getTable()
     {
     	return tblTabela;
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											              //FUNÇÕES PÚBLICAS -> WORK//
-	//--------------------------------------------------------------------------------------------------------------------------//
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											    //FUNÇÕES PÚBLICAS -> WORK -> ATUALIZAR TABELA//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void atualizarTabela()
 	{
 		tblTabela.updateUI();
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											    //FUNÇÕES PÚBLICAS -> WORK -> REMOVER PROCESSO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void removerProceso(clsProcesso pProcesso)
 	{
 		if (pProcesso.getIntPid() == objProcesso.getIntPid())
@@ -73,9 +46,6 @@ public class clsTabelaProcessoEmExecucao
 			tempo = 0;
 		}
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											    //FUNÇÕES PÚBLICAS -> WORK -> INCREMENTAR TEMPO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public boolean incrementarTempo()
 	{
 		boolean retorno = false;
@@ -99,9 +69,6 @@ public class clsTabelaProcessoEmExecucao
 		}
 		return retorno;
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											    //FUNÇÕES PÚBLICAS -> WORK -> EXECUTAR PROCESSO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void executarProcesso(clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria)
 	{
 		clsProcesso auxiliar;
@@ -122,9 +89,6 @@ public class clsTabelaProcessoEmExecucao
 		}
 		atualizarTabela();
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											    //FUNÇÕES PÚBLICAS -> WORK -> EXECUTAR PROCESSO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void bloquearProcesso(clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria)
 	{
 		if (objProcesso.getIntPid() != -1)
@@ -135,13 +99,7 @@ public class clsTabelaProcessoEmExecucao
 		}
 		atualizarTabela();
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  															 //FUNÇÕES PRIVADAS//
-	//--------------------------------------------------------------------------------------------------------------------------//
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												  //FUNÇÕES PRIVADAS -> ATRIBUIR RENDERER//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private void atribuirRenderer()
+	private void atribuirRenderer()
     {
 		tblTabela.setDefaultRenderer(Object.class, 
 										new DefaultTableCellRenderer()
@@ -156,10 +114,7 @@ public class clsTabelaProcessoEmExecucao
 										}	
 									 );
     } 
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												 //FUNÇÕES PRIVADAS -> ATRIBUIR MODELO//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private void atribuirModelo()
+	private void atribuirModelo()
     {
     	tblTabela.setModel(
     						new AbstractTableModel()

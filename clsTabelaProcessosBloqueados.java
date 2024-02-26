@@ -6,16 +6,10 @@ import javax.swing.event.*;
 import java.awt.event.*;
 public class clsTabelaProcessosBloqueados 
 {
-	//--------------------------------------------------------------------------------------------------------------------------//
-  																//ATRIBUTOS//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	clsProcesso vetProcessos[];
     JTable tblTabela;
     int linhas;
-	//--------------------------------------------------------------------------------------------------------------------------//
-  																//CONSTRUTOR//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    public clsTabelaProcessosBloqueados(int pLinhas, int pLargura, int pAltura) 
+	public clsTabelaProcessosBloqueados(int pLinhas, int pLargura, int pAltura) 
     {
     	linhas = pLinhas;
     	vetProcessos = new clsProcesso[linhas];
@@ -25,22 +19,10 @@ public class clsTabelaProcessosBloqueados
     	atribuirRenderer();
     	tblTabela.setPreferredScrollableViewportSize(new Dimension(pLargura, pAltura));
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  															  //FUNÇÕES PÚBLICAS//
-	//--------------------------------------------------------------------------------------------------------------------------// 
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												  //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS//
-	//--------------------------------------------------------------------------------------------------------------------------// 
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											  //FUNÇÕES PÚBLICAS -> GETTERS AND SETTERS -> TABLE//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    public JTable getTable()
+	public JTable getTable()
     {
     	return tblTabela;
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  								           //FUNÇÕES PÚBLICAS -> WORK -> OBTER PROCESSO A EXECUTAR//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public clsProcesso obterProcessoAExecutar()
 	{
 		clsProcesso retorno = new clsProcesso();
@@ -61,12 +43,6 @@ public class clsTabelaProcessosBloqueados
 		atualizarTabela();
 		return retorno;
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											              //FUNÇÕES PÚBLICAS -> WORK//
-	//--------------------------------------------------------------------------------------------------------------------------//
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											  //FUNÇÕES PÚBLICAS -> WORK -> ADICIONAR PROCESSO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void adicionarProcesso(clsProcesso pProcesso, clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria)
 	{
 		int linha;
@@ -84,9 +60,6 @@ public class clsTabelaProcessosBloqueados
 		escalonarMemoria(pMemoriaPrincipal, pMemoriaSecundaria);
 		atualizarTabela();
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											  //FUNÇÕES PÚBLICAS -> WORK -> ELIMINAR PROCESSO//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void eliminarProcesso(int Pid)
 	{
 		int x = getPosicaoPid(Pid);
@@ -108,30 +81,18 @@ public class clsTabelaProcessosBloqueados
 			atualizarTabela();
 		}
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											    //FUNÇÕES PÚBLICAS -> WORK -> ATUALIZAR TABELA//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	public void atualizarTabela()
 	{
 		tblTabela.updateUI();
 	}	
-	//--------------------------------------------------------------------------------------------------------------------------//
-  															 //FUNÇÕES PRIVADAS//
-	//--------------------------------------------------------------------------------------------------------------------------//
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												   //FUNÇÕES PRIVADAS -> INICIALIZAR VETOR//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private void inicializarVetor(int linhas)
+	private void inicializarVetor(int linhas)
     {
 		for(int y=0; y<linhas; y++)
 		{
 			vetProcessos[y] = new clsProcesso();
 		}
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												  //FUNÇÕES PRIVADAS -> ATRIBUIR RENDERER//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private void atribuirRenderer()
+	private void atribuirRenderer()
     {
 		tblTabela.setDefaultRenderer(Object.class, 
 										new DefaultTableCellRenderer()
@@ -146,10 +107,7 @@ public class clsTabelaProcessosBloqueados
 										}	
 									 );
     } 
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												 //FUNÇÕES PRIVADAS -> ATRIBUIR MODELO//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private void atribuirModelo()
+	private void atribuirModelo()
     {
     	tblTabela.setModel(
     						new AbstractTableModel()
@@ -174,10 +132,7 @@ public class clsTabelaProcessosBloqueados
     						}
     					  );		
     }
-	//--------------------------------------------------------------------------------------------------------------------------//
-  												//FUNÇÕES PRIVADAS -> OBTER POSIÇÃO VAZIA//
-	//--------------------------------------------------------------------------------------------------------------------------//
-    private int getPosicaoVazia()
+	private int getPosicaoVazia()
    	{
    		int x = 0; 
    		int pos = 0;
@@ -191,9 +146,6 @@ public class clsTabelaProcessosBloqueados
    		}while(x < linhas && vetProcessos[x-1].getIntPid() != -1);
 		return pos;
    	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											  //FUNÇÕES PRIVADAS -> OBTER POSIÇÃO DO PID//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	private int getPosicaoPid(int pPid)
 	{
 		int posicao = -1;
@@ -208,9 +160,6 @@ public class clsTabelaProcessosBloqueados
 		}while(posicao == -1 && y < linhas);
 		return posicao;	
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											    //FUNÇÕES PRIVADAS -> ESCALONAR MEMÓRIA//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	void escalonarMemoria(clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria)
 	{
 		int vInicio = 0;
@@ -234,9 +183,6 @@ public class clsTabelaProcessosBloqueados
 			vFim--;
 		}	
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											//FUNÇÕES PRIVADAS -> MOVER PARA A MEMÓRIA PRINCIPAL//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	private boolean moverParaAMemoriaPrincipal(clsProcesso pProcesso, clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria)
 	{
 		boolean moveu = false;
@@ -250,9 +196,6 @@ public class clsTabelaProcessosBloqueados
 		}
 		return moveu;
 	}
-	//--------------------------------------------------------------------------------------------------------------------------//
-  											//FUNÇÕES PRIVADAS -> MOVER PARA A MEMÓRIA SECUNDARIA//
-	//--------------------------------------------------------------------------------------------------------------------------//
 	private boolean moverParaAMemoriaSecundaria(clsProcesso pProcesso, clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria)
 	{
 		boolean moveu = false;
