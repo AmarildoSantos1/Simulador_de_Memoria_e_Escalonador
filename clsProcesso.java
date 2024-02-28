@@ -13,7 +13,6 @@ public class clsProcesso
 	private boolean selecionado;
 	private boolean eliminado;
 	
-  //CONSTRUTOR//
 	
     public clsProcesso() 
     {
@@ -37,7 +36,7 @@ public class clsProcesso
     	return pid;
     }
 	
-  	// GETTERS AND SETTERS -> ELIMINADO//
+  	// Getters and setters ELIMINADO//
     
     public void setEliminado(boolean pEliminado)
     {

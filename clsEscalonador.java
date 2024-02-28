@@ -16,7 +16,6 @@ public class clsEscalonador
 	clsTabelaMemoria objMemoriaSecundaria;
 	clsTabelaTempoTotal objTempoTotal;
 	clsTabelaProcessoEmExecucao objProcessoEmExecucao;
-	//CONSTRUTOR//
 	
     public clsEscalonador(JPanel pPanel, int pTempo, clsTabelaProcesso pProcesso, clsTabelaProcessosBloqueados pProcessosBloqueados, clsTabelaMemoria pMemoriaPrincipal, clsTabelaMemoria pMemoriaSecundaria, clsTabelaTempoTotal pTempoTotal, clsTabelaProcessoEmExecucao pProcessoEmExecucao) 
     {
