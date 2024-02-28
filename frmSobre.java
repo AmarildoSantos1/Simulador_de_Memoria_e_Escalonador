@@ -20,8 +20,8 @@ public class frmSobre extends JFrame
 		//--------------------------------------------------------------------------------------------------------------------------//
 		JTextArea txtTeoria = new JTextArea();
 		txtTeoria.append(
-							"          O escalonamento, forma mais elementar para escalonar processos e consiste em atender as tarefas na ordem em que estas chegam a fila de tarefas prontas.\n" +
-							"          Este projeto une a fila de processos prontos e a fila de processos bloqueados em uma unica fila de processos bloqueados. O algoritmo apresenta, no qual o processador executa uma tarefa por vez.\n" +
+							"          O escalonamento FCFS (First-Come, First Served), sendo a forma mais elementar para escalonar processos e consiste em atender as tarefas na ordem em que estas chegam a fila de tarefas prontas.\n" +
+							"          Este projeto une a fila de processos prontos e a fila de processos bloqueados em uma unica fila de processos bloqueados. O algoritmo apresenta FCFS cooperativo, no qual o processador executa uma tarefa por vez.\n" +
 							"          Para melhorar o desempenho, os processos sao alocados na memoria de acordo sua posicao na fila de bloqueados. O processo em execucao e os primeiros processos da fila de bloqueados sao armazenados na memoria principal. Caso a memoria principal fique lotada, os ultimos processos da fila de bloqueados sao armazenados na memoria secundaria. Para que esta realocacao de memoria (swap) possa ser executada, e necessario que haja na memoria secundaria um espaco igual ou superior ao tamanho do maior processo."           
 						);
 		txtTeoria.setEditable(false);
