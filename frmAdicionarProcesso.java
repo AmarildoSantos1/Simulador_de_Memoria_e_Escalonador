@@ -100,7 +100,7 @@ public class frmAdicionarProcesso extends JFrame
 		pnlCorDoProcesso.setBorder(BorderFactory.createEtchedBorder(1));
 		pnlCorDoProcesso.setLayout(new BorderLayout());
 		pnlCentro.add(pnlCorDoProcesso);
-		//CENTRO DA TELA -> COR DO PROCESSO -> T�TULO//
+		//CENTRO DA TELA -> COR DO PROCESSO -> TITULO//
 		JPanel pnlTituloCorProcesso = new JPanel();
 		pnlTituloCorProcesso.setLayout(new FlowLayout());
 		pnlCorDoProcesso.add(pnlTituloCorProcesso, BorderLayout.NORTH);

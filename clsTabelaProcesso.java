@@ -158,7 +158,7 @@ public class clsTabelaProcesso
 		int x;
 		if(vetProcessos[tblTabela.getSelectedRow()].getIntPid() != -1)
 		{
-			op = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover o processo selecionado? \nVoce nao podera desfazer esta operacao.");
+			op = JOptionPane.showConfirmDialog(null, "Remover o processo selecionado? ");
 			if (op == 0)
 			{
 				x = tblTabela.getSelectedRow();

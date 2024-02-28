@@ -70,7 +70,7 @@ public class frmPrincipal extends JFrame
 		pnlMemoria.setLayout(new BorderLayout());
 		pnlCentro.add(pnlMemoria, BorderLayout.WEST);
 		pnlMemoria.setBorder(BorderFactory.createEtchedBorder(1));
-		//CENTRO DA TELA -> TELA DE MEM�RIA -> T�TULO//
+		//CENTRO DA TELA -> TELA DE MEMORIA -> TITULO//
 		JPanel pnlTituloMemoria = new JPanel();
 		pnlTituloMemoria.setLayout(new FlowLayout());
 		pnlMemoria.add(pnlTituloMemoria, BorderLayout.NORTH);
