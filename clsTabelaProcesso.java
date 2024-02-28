@@ -158,7 +158,7 @@ public class clsTabelaProcesso
 		int x;
 		if(vetProcessos[tblTabela.getSelectedRow()].getIntPid() != -1)
 		{
-			op = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover o processo selecionado? \nVoc� n�o poder� desfazer esta opera��o.");
+			op = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover o processo selecionado? \nVoce nao podera desfazer esta operacao.");
 			if (op == 0)
 			{
 				x = tblTabela.getSelectedRow();
@@ -284,7 +284,7 @@ public class clsTabelaProcesso
     	tblTabela.setModel(
     						new AbstractTableModel()
 							{
-								private String colunas[] = {"PID", "Tipo", "Estado", "Frames", "Tempo","Tempo de UCP", "Tempo de cria��o"};
+								private String colunas[] = {"PID", "Tipo", "Estado", "Frames", "Tempo","Tempo de UCP", "Tempo de criacao"};
 								public String getColumnName(int num)
 							    {
 							        return colunas[num];

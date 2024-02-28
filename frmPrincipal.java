@@ -17,7 +17,7 @@ public class frmPrincipal extends JFrame
 	public frmPrincipal()
 	{
 	//TELA//
-		super("Simulador de escalonamento de processos FCFS");
+		super("Simulador de escalonamento de processos");
 		Container tela = getContentPane();
 		tela.setLayout(new BorderLayout());
 		//CENTRO DA TELA//
@@ -75,7 +75,7 @@ public class frmPrincipal extends JFrame
 		pnlTituloMemoria.setLayout(new FlowLayout());
 		pnlMemoria.add(pnlTituloMemoria, BorderLayout.NORTH);
 		//--------------------------------------------------------------------------------------------------------------------------//
-		JLabel lblTituloMemoria = new JLabel("Mem�ria");
+		JLabel lblTituloMemoria = new JLabel("Memoria");
 		pnlTituloMemoria.add(lblTituloMemoria);
 		//CENTRO DA TELA -> TELA DE MEMORIA -> MEMORIA PRINCIPAL//
 		JPanel pnlMemoriaPrincipal = new JPanel();
@@ -87,7 +87,7 @@ public class frmPrincipal extends JFrame
 		pnlTituloMemoriaPrincipal.setLayout(new FlowLayout());
 		pnlMemoriaPrincipal.add(pnlTituloMemoriaPrincipal, BorderLayout.NORTH);
 		//--------------------------------------------------------------------------------------------------------------------------//
-		JLabel lblTituloMemoriaPrincipal = new JLabel("Mem�ria principal");
+		JLabel lblTituloMemoriaPrincipal = new JLabel("Memoria principal");
 		pnlTituloMemoriaPrincipal.add(lblTituloMemoriaPrincipal);
 		//CENTRO DA TELA -> TELA DE MEMORIA -> MEMORIA PRINCIPAL -> TABELA//
 		JPanel pnlTabelaMemoriaPrincipal = new JPanel();
@@ -107,7 +107,7 @@ public class frmPrincipal extends JFrame
 		pnlTituloMemoriaSecundaria.setLayout(new FlowLayout());
 		pnlMemoriaSecundaria.add(pnlTituloMemoriaSecundaria, BorderLayout.NORTH);
 		//--------------------------------------------------------------------------------------------------------------------------//
-		JLabel lblTituloMemoriaSecundaria = new JLabel("Mem�ria secund�ria");
+		JLabel lblTituloMemoriaSecundaria = new JLabel("Memoria secundaria");
 		pnlTituloMemoriaSecundaria.add(lblTituloMemoriaSecundaria);
 	    //CENTRO DA TELA -> TELA DE MEMORIA -> MEMORIA SECUNDARIA -> TABELA//
 		JPanel pnlTabelaMemoriaSecundaria = new JPanel();
@@ -163,7 +163,7 @@ public class frmPrincipal extends JFrame
 		pnlTituloTempoDeExecucao.setLayout(new FlowLayout());
 		pnlTempoDeExecucao.add(pnlTituloTempoDeExecucao, BorderLayout.NORTH);
 		//--------------------------------------------------------------------------------------------------------------------------//
-		JLabel lblTituloTempoDeExecucao = new JLabel("Tempo de Execu��o");
+		JLabel lblTituloTempoDeExecucao = new JLabel("Tempo de Execucao");
 		pnlTituloTempoDeExecucao.add(lblTituloTempoDeExecucao);
 		//CENTRO DA TELA -> PROCESSADOR -> DETALHES -> TEMPO DE EXECUCAO -> TABELA//
 		JPanel pnlTabelaTempoDeExecucao = new JPanel();
@@ -183,7 +183,7 @@ public class frmPrincipal extends JFrame
 		pnlTituloEmExecucao.setLayout(new FlowLayout());
 		pnlEmExecucao.add(pnlTituloEmExecucao, BorderLayout.NORTH);
 		//--------------------------------------------------------------------------------------------------------------------------//
-		JLabel lblTituloEmExecucao = new JLabel("Em Execu��o");
+		JLabel lblTituloEmExecucao = new JLabel("Em Execucao");
 		pnlTituloEmExecucao.add(lblTituloEmExecucao);
 		//CENTRO DA TELA -> PROCESSADOR -> DETALHES -> EM EXECUCAO -> TABELA//
 		JPanel pnlTabelaEmExecucao = new JPanel();

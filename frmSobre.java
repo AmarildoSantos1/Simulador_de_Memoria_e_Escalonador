@@ -14,14 +14,14 @@ public class frmSobre extends JFrame
 		pnlTeoria.setLayout(new BorderLayout());
 		tela.add(pnlTeoria, BorderLayout.NORTH);
 		//--------------------------------------------------------------------------------------------------------------------------//
-		JLabel lblTituloTeoria = new JLabel("Sobre o modo FCFS de escalonamento");
+		JLabel lblTituloTeoria = new JLabel("Sobre o modo de escalonamento");
 		lblTituloTeoria.setHorizontalAlignment(SwingConstants.CENTER);
 		pnlTeoria.add(lblTituloTeoria, BorderLayout.NORTH); 
 		//--------------------------------------------------------------------------------------------------------------------------//
 		JTextArea txtTeoria = new JTextArea();
 		txtTeoria.append(
-							"          O escalonamento FIFO (First-In-First-Out) ou FCFS (First-Come, First Served) e a forma mais elementar para escalonar processos e consiste em atender as tarefas na ordem em que estas chegam a fila de tarefas prontas.\n" +
-							"          Este projeto une a fila de processos prontos e a fila de processos bloqueados em uma unica fila de processos bloqueados. O algoritmo apresentado representa o modo de escalonamento FCFS cooperativo, no qual o processador executa uma tarefa por vez.\n" +
+							"          O escalonamento, forma mais elementar para escalonar processos e consiste em atender as tarefas na ordem em que estas chegam a fila de tarefas prontas.\n" +
+							"          Este projeto une a fila de processos prontos e a fila de processos bloqueados em uma unica fila de processos bloqueados. O algoritmo apresenta, no qual o processador executa uma tarefa por vez.\n" +
 							"          Para melhorar o desempenho, os processos sao alocados na memoria de acordo sua posicao na fila de bloqueados. O processo em execucao e os primeiros processos da fila de bloqueados sao armazenados na memoria principal. Caso a memoria principal fique lotada, os ultimos processos da fila de bloqueados sao armazenados na memoria secundaria. Para que esta realocacao de memoria (swap) possa ser executada, e necessario que haja na memoria secundaria um espaco igual ou superior ao tamanho do maior processo."           
 						);
 		txtTeoria.setEditable(false);

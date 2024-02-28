@@ -58,7 +58,7 @@ public class frmAdicionarProcesso extends JFrame
 		pnlTempo.setLayout(new BorderLayout());
 		pnlTempo.setBorder(BorderFactory.createEtchedBorder(1));
 		pnlCentro.add(pnlTempo);
-		//CENTRO DA TELA -> TEMPO -> T�TULO//
+		//CENTRO DA TELA -> TEMPO -> TITULO//
 		JPanel pnlTituloTempo = new JPanel();
 		pnlTituloTempo.setLayout(new FlowLayout());
 		pnlTempo.add(pnlTituloTempo, BorderLayout.NORTH);

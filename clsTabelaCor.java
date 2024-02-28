@@ -5,6 +5,7 @@ import javax.swing.table.*;
 import javax.swing.event.*;
 import java.awt.event.*;
 public class clsTabelaCor 
+// credito:https://github.com/titenq/united-colors-of-devs, adaptado com GPT Chat
 {
 	
     JTable tblTabela;
