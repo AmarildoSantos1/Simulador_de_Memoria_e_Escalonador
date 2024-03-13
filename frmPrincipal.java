@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 public class frmPrincipal extends JFrame
 {
-	//ATRIBUTOS//
 	clsTabelaProcesso objTabelaProcessos;
 	clsTabelaProcessosBloqueados objProcessosBloqueados;
 	clsTabelaMemoria objMemoriaPrincipal;
@@ -13,10 +12,8 @@ public class frmPrincipal extends JFrame
 	clsTabelaProcessoEmExecucao objProcessoEmExecucao;
 	clsEscalonador objProcessador;
 	JTable tblProcessos;
-	//CONSTRUTOR//
 	public frmPrincipal()
 	{
-	//TELA//
 		super("Simulador de escalonamento de processos");
 		Container tela = getContentPane();
 		tela.setLayout(new BorderLayout());
