@@ -127,7 +127,7 @@ public class clsTabelaProcesso
 		{
 			if (!pMemoriaSecundaria.adicionarProcesso(processoAuxiliar, tamanhoMaiorProcesso))
 			{
-				JOptionPane.showMessageDialog(null, "� necess�rio que haja espa�o livre na mem�ria secund�ria para realizar o swap de mem�ria e por este motivo voc� n�o pode adicionar o processo.");
+				JOptionPane.showMessageDialog(null, "necessario que haja espaco livre na memoria secundaria para realizar o swap de memoria e por este motivo voce nao pode adicionar o processo.");
 			}
 			else
 			{
